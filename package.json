@@ -18,6 +18,8 @@
     "loopback-boot": "^2.6.5",
     "loopback-component-explorer": "^6.0.0",
     "loopback-component-storage": "^3.5.0",
+    "loopback-connector-sqlite": "^1.4.5",
+    "loopback-migration-tool": "^1.4.0",
     "serve-favicon": "^2.0.1",
     "strong-error-handler": "^3.0.0"
   },
