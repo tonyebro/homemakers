@@ -1,0 +1,9 @@
+<div ng-controller="HomeController">
+	<div>
+		<div class="image-slideshow">
+			<div class="arrows"><i class="fa fa-caret-left fa-4x" ng-click="switch_slide(false)"></i></div>
+			<div class="img-slide"><img class="big-image" ng-src="{{baseUrl}}/{{curr_slide}}"></div>
+			<div class="arrows"><i class="fa fa-caret-right fa-4x" ng-click="switch_slide(true)"></i></div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,12 @@
+<div>
+	<div class="container retail">
+		<div class="subheader"></div>
+		<div role="navigation" class="product-navbar">
+    		<ul>
+    			<li ng-repeat="option in categories"><span ng-click="rerouteToProductCategory(option)" ng-class="activeProducts(option)">{{ option }}</span></li>
+    			<li><span ng-click='rerouteToProductCategory("All")'> All Items </span></li>
+    		</ul>
+		</div>
+		<div class="product-box" ui-view></div>
+	</div>
+</div>

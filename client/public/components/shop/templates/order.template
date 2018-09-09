@@ -1,0 +1,54 @@
+<div class="order-view">
+    <div class="order-box-wrapper" ng-show="!noItems && !orderSent">
+    <div class="customer-info-box">
+        <form>
+            <div class="order-heading"><h4>Your Info</h4></div>
+            <div class="form-group">
+                <input type="text" ng-model="customer_name" class="form-control" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <input type="email" ng-model="customer_email" class="form-control" placeholder="Email">                
+            </div>
+            <div class="form-group">
+                <input type="tel" ng-model="customer_phone" class="form-control" placeholder="Phone">               
+            </div>
+            <p>
+                Please leave your contact information and we'll get back to you about delivering the items you requested.
+            </p>
+        </form>
+    </div>
+    <div class="order-box">
+    <div class="order-heading"><h4>Summary</h4></div>
+    <table class="table order-grid">
+            <tr>
+                <th class="col-md-6">Product</th>
+                <th class="col-md-2">Quantity</th>
+                <th class="col-md-2"></th>
+                <th class="col-md-2">Price</th>
+            </tr>
+            <tr ng-repeat="item in order_items">
+                <td class="col-md-6">
+                    <h4>{{item.name}}</h4>
+                    <img ng-src="{{item.imgUrl}}" >
+                </td>
+                <td class="col-md-2 wrap-center">{{item.quantity}}</td>
+                 <td class="col-md-2 wrap-center"><i class="fas fa-times-circle" ng-click="removeProduct(item)"></i></td>
+                <td class="col-md-2">{{item.price | number : 2}}</td>
+            </tr>
+            <tr>
+                <td class="col-md-6"></th>
+                <td class="col-md-2"></td>
+                <td class="col-md-2">Subtotal: </th>
+                <td class="col-md-2">{{ total_cost | number : 2 }}</th>
+            </tr>
+    </table>
+    </div>
+    <button type="button" class="btn btn-primary btn-lg order-btn" ng-click="sendOrder(customer_name, customer_email, customer_phone)"> Send Order </button>
+    </div>
+    <div ng-show="noItems && !orderSent" class="page-message">
+        <div><br>{{message}}</div>
+    </div>
+    <div ng-show="orderSent" class="page-message">
+        <div>Thank you for order! We'll send an email to confirm soon.</div>
+    </div>
+</div>

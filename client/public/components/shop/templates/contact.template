@@ -1,0 +1,11 @@
+<div class=contact-view>
+    <div class="contact-center"> 
+    <div class="contact-text">
+        You can find us at <br>
+        B14 6020 2nd Street SE <br>
+        Calgary, Alberta <br>
+        Canada<br>
+    </div>
+    <div id="map"></div>
+    </div>
+</div>

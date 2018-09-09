@@ -1,0 +1,18 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "sqliteDS": {
+    "name": "sqliteDS",
+    "connector": "loopback-connector-sqlite",
+    "file_name": "./database.sqlite3"
+  },
+  "myfiles": {
+    "name": "myfiles",
+    "connector": "loopback-component-storage",
+    "provider": "filesystem",
+    "root": "./media",
+    "nameConflict": "makeUnique"
+  }
+}

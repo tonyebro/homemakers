@@ -1,0 +1,40 @@
+<div role="navigation" class="product-navbar">
+    <button ng-click="show_grid = !show_grid">Add New Item</button>
+</div>
+<div ng-show="show_grid" class="product-grid"> 
+		<div class="crop col-s-3" ng-repeat="item in inventory">
+			<img ng-src={{getImageUrl(item.image)}}>
+			<div class="caption">
+				<i ng-click="deleteProduct(item.id)" class="fa fa-window-close fa-3x"></i>
+	    		<div class="edit-button"><a ui-sref="edit_product({productID : item.id })">{{item.name}}</a></div>
+			</div>
+		</div>
+</div>
+<div ng-show="!show_grid" class="add-product-grid">
+	<div class="table-responsive-md">
+	<table class="table table-bordered">
+		<thead>
+            <tr>
+                <th class="col-md-2">Name</th>
+                <th class="col-md-2">Category</th>
+                <th class="col-md-2">Price</th>
+                <th class="col-md-2">Cost</th>
+                <th class="col-md-2">Quantity</th>
+                <th class="col-md-2">Description</th>
+                <th class="col-md-2">Image</th>
+            </tr>
+        </thead>
+        <tbody>
+        	<tr ng-repeat="new_product in new_products">
+        		<td class="col-md-2"><input type="text" ng-model="new_product.name"></td>
+        		<td class="col-md-2"><input type="text" ng-model="new_product.category"></td>
+        		<td class="col-md-2"><input type="number" ng-model="new_product.price"></td>
+        		<td class="col-md-2"><input type="number" ng-model="new_product.cost"></td>
+        		<td class="col-md-2"><input type="number" ng-model="new_product.quantity"></td>
+          		<td class="col-md-2"><input type="text" ng-model="new_product.description"></td>
+          		<td class="col-md-2"><input type="file" accept="image/png, image/jpeg"></td>
+        	</tr>
+        </tbody>
+    </table>
+    </div>
+</div>

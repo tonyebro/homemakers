@@ -1,0 +1,9 @@
+<div class="product-grid"> 
+		<div class="crop col-s-3" ng-repeat="item in inventory">
+			<img ng-src={{getImageUrl(item.image)}}>
+			<div class="caption">
+	    		<a ui-sref="rental.product({productID : item.id })">{{ item.name }}</a>
+	    		<div class="price">{{item.price | number : 2}} CAD</div>
+			</div>
+		</div>
+</div>
